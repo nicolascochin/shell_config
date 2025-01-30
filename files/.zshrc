@@ -80,7 +80,20 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 typeset -a OMZ_PLUGINS
 [[ -f ~/.omz_plugins.zsh ]] && source ~/.omz_plugins.zsh
+
 cmd_exists git && OMZ_PLUGINS+=(git)
+cmd_exists tmux && OMZ_PLUGINS+=(tmux)
+cmd_exists fzf && OMZ_PLUGINS+=(fzf)
+cmd_exists direnv && OMZ_PLUGINS+=(direnv)
+OMZ_PLUGINS+=(
+  aliases
+  alias-finder
+  common-aliases
+  command-not-found
+  zshrc.d
+  transfer # Add cmd transfer -> transfer.sh
+  copyfile # Add cmd copyfile XXX 
+)
 
 plugins=("${OMZ_PLUGINS[@]}")
 
