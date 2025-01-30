@@ -91,13 +91,18 @@ OMZ_PLUGINS+=(
   common-aliases
   command-not-found
   zshrc.d
-  transfer # Add cmd transfer -> transfer.sh
-  copyfile # Add cmd copyfile XXX 
 )
 
 plugins=("${OMZ_PLUGINS[@]}")
 
 source $ZSH/oh-my-zsh.sh
+
+
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
+zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
+zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
+
 
 # User configuration
 
