@@ -14,16 +14,21 @@ fi
 echo "Create links"
 # Loop through all files in the files directory
 shopt -s dotglob
-find "$FILES_DIR" -type f | while read -r file; do
+# Create files @ root only
+for file in "$FILES_DIR"/*; do
   if [ -f "$file" ]; then
     RELATIVE_PATH="${file#$FILES_DIR/}"
-    DIR=$TARGET_DIR/$(dirname $RELATIVE_PATH)
-    #echo "file: $file -- relative path: $RELATIVE_PATH -- target: $DIR"
-    [[ ! -d $DIR ]] && mkdir -p $DIR
-    ln -s -f "$file" "$TARGET_DIR/$RELATIVE_PATH"
     echo "Created symlink for: $RELATIVE_PATH"
   fi
 done
 
+# For folders, take the last one and create a link to the folder
+for DIR in $(find "$FILES_DIR" -mindepth 1 -type d -exec bash -c '[[ $(find "$1" -mindepth 1 -type d) ]] || echo "$1"' bash {} \;); do
+  RELATIVE_PATH="${DIR#$FILES_DIR/}"
+  PARENT=$TARGET_DIR/$(dirname $RELATIVE_PATH)
+  [[ ! -d $PARENT ]] && mkdir -p $PARENT
+  ln -s -f "$DIR" "$TARGET_DIR/$RELATIVE_PATH"
+  echo "Created symlink for: $RELATIVE_PATH"
+done
 echo "All symlinks created successfully."
 
