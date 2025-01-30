@@ -18,6 +18,7 @@ shopt -s dotglob
 for file in "$FILES_DIR"/*; do
   if [ -f "$file" ]; then
     RELATIVE_PATH="${file#$FILES_DIR/}"
+    ln -s -f "$file" "$TARGET_DIR/$RELATIVE_PATH"
     echo "Created symlink for: $RELATIVE_PATH"
   fi
 done
