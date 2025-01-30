@@ -8,7 +8,7 @@ then
   }
 #  unalias help
 
-  export BAT_THEME=Nord
+  export BAT_THEME=Dracula
 fi
 
 if cmd_exists batdiff
