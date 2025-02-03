@@ -99,6 +99,7 @@ OMZ_PLUGINS+=(
   command-not-found
   forgit
   zshrc.d
+  F-Sy-H
 )
 
 plugins=("${OMZ_PLUGINS[@]}")
