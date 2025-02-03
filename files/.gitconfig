@@ -1,0 +1,12 @@
+[include]
+  path = ~/.git-credentials
+[color]
+  ui = true
+[pull]
+  rebase = true
+[help]
+  autocorrect = 1
+[core]
+  editor = nvim
+  excludesfile = ~/.git-global-ignore
+
