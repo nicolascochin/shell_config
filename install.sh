@@ -43,6 +43,7 @@ then
   git clone https://github.com/mattmc3/zshrc.d $HOME/.oh-my-zsh/custom/plugins/zshrc.d
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
   git clone https://github.com/wfxr/forgit.git $HOME/.oh-my-zsh/custom/plugins/forgit
+  git clone https://github.com/z-shell/F-Sy-H.git $HOME/.oh-my-zsh/custom/plugins/F-Sy-H
 fi 
 
 echo "Create links"
