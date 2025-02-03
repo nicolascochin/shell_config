@@ -29,6 +29,9 @@ chmod 600 ~/.git-credentials
 echo "Install OMZ"
 if [[ ! -d ~/.oh-my-zsh ]]
 then
+  # Install FZF
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install --completion --key-bindings --no-update-rc --no-bas
   # Install OMZ
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # Install OMZ plugins & theme
