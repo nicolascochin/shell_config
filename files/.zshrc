@@ -100,6 +100,7 @@ OMZ_PLUGINS+=(
   forgit
   zshrc.d
   F-Sy-H
+  zsh-autosuggestions
 )
 
 plugins=("${OMZ_PLUGINS[@]}")
