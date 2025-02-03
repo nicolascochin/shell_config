@@ -26,12 +26,17 @@ cat <<EOF > ~/.git-credentials
 EOF
 chmod 600 ~/.git-credentials
 
-echo "Install OMZ"
-if [[ ! -d ~/.oh-my-zsh ]]
+echo "Install FZF"
+if [[ ! -d ~/.fzf ]]
 then
   # Install FZF
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install --completion --key-bindings --no-update-rc --no-bash
+fi
+
+echo "Install OMZ"
+if [[ ! -d ~/.oh-my-zsh ]]
+then
   # Install OMZ
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # Install OMZ plugins & theme
