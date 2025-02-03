@@ -145,3 +145,5 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # To customize prompt, run `p10k configure` or edit ~/.config/shell_config/files/.p10k.zsh.
 [[ ! -f ~/.config/shell_config/files/.p10k.zsh ]] || source ~/.config/shell_config/files/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

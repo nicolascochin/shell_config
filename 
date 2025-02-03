@@ -1,0 +1,23 @@
+[1mdiff --git a/files/.zshrc b/files/.zshrc[m
+[1mindex 767084c..6ef9bc0 100644[m
+[1m--- a/files/.zshrc[m
+[1m+++ b/files/.zshrc[m
+[36m@@ -145,3 +145,5 @@[m [mzstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default[m
+ [m
+ # To customize prompt, run `p10k configure` or edit ~/.config/shell_config/files/.p10k.zsh.[m
+ [[ ! -f ~/.config/shell_config/files/.p10k.zsh ]] || source ~/.config/shell_config/files/.p10k.zsh[m
+[32m+[m
+[32m+[m[32m[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh[m
+[1mdiff --git a/files/.zshrc.d/fzf.zsh b/files/.zshrc.d/fzf.zsh[m
+[1mindex e4705d4..138d72d 100644[m
+[1m--- a/files/.zshrc.d/fzf.zsh[m
+[1m+++ b/files/.zshrc.d/fzf.zsh[m
+[36m@@ -1 +1,7 @@[m
+[31m- [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh[m
+[32m+[m[32m# Setup fzf[m
+[32m+[m[32m# ---------[m
+[32m+[m[32mif [[ ! "$PATH" == */~/.fzf/bin* ]]; then[m
+[32m+[m[32m  PATH="${PATH:+${PATH}:}${HOME}/.fzf/bin"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32msource <(fzf --zsh)[m
