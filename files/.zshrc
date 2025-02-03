@@ -97,6 +97,7 @@ OMZ_PLUGINS+=(
   alias-finder
   common-aliases
   command-not-found
+  forgit
   zshrc.d
 )
 
