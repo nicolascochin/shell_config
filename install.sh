@@ -44,6 +44,7 @@ then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
   git clone https://github.com/wfxr/forgit.git $HOME/.oh-my-zsh/custom/plugins/forgit
   git clone https://github.com/z-shell/F-Sy-H.git $HOME/.oh-my-zsh/custom/plugins/F-Sy-H
+  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi 
 
 echo "Create links"
