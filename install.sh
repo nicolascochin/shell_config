@@ -5,33 +5,11 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FILES_DIR="$SCRIPT_DIR/files"
 TARGET_DIR=$HOME
 
-
-ask_question() {
-  local prompt="$1"
-  local response=""
-
-  while [[ -z "$response" ]]; do
-    read -rp "$prompt " response
-    if [[ -z "$response" ]]; then
-      echo "Erreur : la réponse ne peut pas être vide."
-    fi
-  done
-  echo "$response"
-}
-
 # Ensure the files directory exists
 if [ ! -d "$FILES_DIR" ]; then
   echo "Error: The 'files' directory does not exist."
   exit 1
 fi
-
-# Utilisation de la fonction
-github_username=$(ask_question "Quel nom GitHub utiliser ?")
-
-# Affichage du résultat
-echo "Nom GitHub choisi : $github_username"
-exit
-
 
 echo "Install OMZ"
 # Install OMZ
