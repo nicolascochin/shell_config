@@ -92,6 +92,7 @@ cmd_exists git && OMZ_PLUGINS+=(git)
 cmd_exists tmux && OMZ_PLUGINS+=(tmux)
 cmd_exists fzf && OMZ_PLUGINS+=(fzf)
 cmd_exists direnv && OMZ_PLUGINS+=(direnv)
+cmd_exists docker && OMZ_PLUGINS+=(docker)
 OMZ_PLUGINS+=(
   aliases
   alias-finder
