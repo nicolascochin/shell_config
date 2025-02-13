@@ -35,17 +35,14 @@ then
 fi
 
 echo "Install OMZ"
-if [[ ! -d ~/.oh-my-zsh ]]
-then
-  # Install OMZ
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # Install OMZ plugins & theme
-  git clone https://github.com/mattmc3/zshrc.d $HOME/.oh-my-zsh/custom/plugins/zshrc.d
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
-  git clone https://github.com/wfxr/forgit.git $HOME/.oh-my-zsh/custom/plugins/forgit
-  git clone https://github.com/z-shell/F-Sy-H.git $HOME/.oh-my-zsh/custom/plugins/F-Sy-H
-  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-fi 
+[[ ! -d ~/.oh-my-zsh ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install OMZ plugins & theme
+[[ ! -d $HOME/.oh-my-zsh/custom/plugins/zshrc.d ]] && git clone https://github.com/mattmc3/zshrc.d $HOME/.oh-my-zsh/custom/plugins/zshrc.d
+[[ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+[[ ! -d $HOME/.oh-my-zsh/custom/plugins/forgit ]] && git clone https://github.com/wfxr/forgit.git $HOME/.oh-my-zsh/custom/plugins/forgit
+[[ ! -d $HOME/.oh-my-zsh/custom/plugins/F-Sy-H ]] && git clone https://github.com/z-shell/F-Sy-H.git $HOME/.oh-my-zsh/custom/plugins/F-Sy-H
+[[ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] && git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 echo "Create links"
 # Loop through all files in the files directory
