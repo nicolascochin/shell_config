@@ -13,3 +13,13 @@ who_uses_port() {
       done
   fi
 }
+
+
+# $1: Database name
+# $2: Database user
+kill_all_pg_conn() {
+  local db_name="$1"
+  local db_user="${2:-postgres}"
+  psql -U "$db_user" -d "$db_name" -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = '$db_name' AND pid <> pg_backend_pid();"
+}
+
