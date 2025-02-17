@@ -93,6 +93,11 @@ cmd_exists tmux && OMZ_PLUGINS+=(tmux)
 cmd_exists fzf && OMZ_PLUGINS+=(fzf)
 cmd_exists direnv && OMZ_PLUGINS+=(direnv)
 cmd_exists docker && OMZ_PLUGINS+=(docker)
+cmd_exists rbenv && OMZ_PLUGINS+=(rbenv)
+cmd_exists bundle && OMZ_PLUGINS+=(bundler)
+cmd_exists ruby && OMZ_PLUGINS+=(ruby)
+cmd_exists rails && OMZ_PLUGINS+=(rails)
+
 OMZ_PLUGINS+=(
   aliases
   alias-finder
